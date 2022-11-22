@@ -31,7 +31,6 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew bootJar
-          mv build/libs/$(ls build/libs) app.jar
 
       - name: Copy Jar file
         run: mv build/libs/$(ls build/libs) app.jar
