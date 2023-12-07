@@ -74,4 +74,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: geowalrus/kargo-demo-app:${{ env.DATE }}
+          tags: geowalrus/kargo-demo-app:1.0.0-${{ env.DATE }}
