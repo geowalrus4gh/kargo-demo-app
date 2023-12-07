@@ -16,5 +16,10 @@ public class EchoController {
 	public MessageModel echo() {
 		return this.echoService.getMessage();
 	}
+	
+	@GetMapping("/test")
+	public String test() {
+		return "Am a test";
+	}
 
 }
