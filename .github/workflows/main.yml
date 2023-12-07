@@ -7,6 +7,9 @@ on:
 permissions:
   contents: read
 
+env:
+  VERSION: 1.0.0
+
 jobs:
   build:
 
@@ -67,20 +70,20 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Set env
-        run: echo "DATE=$(date +%s)" >> $GITHUB_ENV
+        run: echo "VERSION=1.0.0-$(date +%s)" >> $GITHUB_ENV
       
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: geowalrus/kargo-demo-app:1.0.0-${{ env.DATE }}
+          tags: geowalrus/kargo-demo-app:${{ env.VERSION }}
 
 
   build-chart:
 
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-image
 
     steps:
       - name: Chart Push
@@ -88,7 +91,7 @@ jobs:
         with:
           name: kargo-demo-app
           repository: geowalrus
-          tag: 1.0.0-${{ env.DATE }}
+          tag: ${{ env.VERSION }}
           path: charts/kargo-demo-app 
           registry: registry-1.docker.io
           registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
