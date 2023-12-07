@@ -79,13 +79,6 @@ jobs:
           push: true
           tags: geowalrus/kargo-demo-app:${{ env.VERSION }}
 
-
-  build-chart:
-
-    runs-on: ubuntu-latest
-    needs: build-image
-
-    steps:
       - name: Chart Push
         uses: appany/helm-oci-chart-releaser@v0.3.0
         with:
