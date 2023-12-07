@@ -75,3 +75,22 @@ jobs:
           context: .
           push: true
           tags: geowalrus/kargo-demo-app:1.0.0-${{ env.DATE }}
+
+
+  build-chart:
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Chart Push
+        uses: appany/helm-oci-chart-releaser@v0.3.0
+        with:
+          name: kargo-demo-app
+          repository: geowalrus
+          tag: 1.0.0-${{ env.DATE }}
+          path: charts/kargo-demo-app 
+          registry: registry-1.docker.io
+          registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          registry_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          update_dependencies: 'true' # Defaults to false
