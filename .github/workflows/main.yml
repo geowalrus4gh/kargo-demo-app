@@ -82,10 +82,10 @@ jobs:
       - name: Chart Push
         uses: appany/helm-oci-chart-releaser@v0.3.0
         with:
-          name: kargo-demo-app
-          repository: geowalrus/kargo-demo-app-charts
+          name: kargo-demo-app-charts
+          repository: geowalrus
           tag: ${{ env.VERSION }}
-          path: charts/kargo-demo-app 
+          path: charts/kargo-demo-app-charts
           registry: registry-1.docker.io
           registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
           registry_password: ${{ secrets.DOCKERHUB_TOKEN }}
