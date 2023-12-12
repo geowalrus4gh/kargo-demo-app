@@ -85,6 +85,7 @@ jobs:
           name: kargo-demo-app-charts
           repository: geowalrus
           tag: ${{ env.VERSION }}
+          app-version: ${{ env.VERSION }}
           path: charts/kargo-demo-app-charts
           registry: registry-1.docker.io
           registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
