@@ -80,7 +80,7 @@ jobs:
           tags: geowalrus/kargo-demo-app:${{ env.VERSION }}
 
       - name: Chart Push
-        uses: appany/helm-oci-chart-releaser@v0.3.0
+        uses: geowalrus4gh/helm-oci-chart-releaser@v1.0.0
         with:
           name: kargo-demo-app-charts
           repository: geowalrus
