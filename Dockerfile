@@ -2,7 +2,7 @@ FROM openjdk:8-jdk
 
 RUN mkdir /app
 
-COPY *.jar /app/app.jar
+COPY app.jar /app/app.jar
 
 WORKDIR /app
 
