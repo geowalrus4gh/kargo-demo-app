@@ -27,13 +27,8 @@ jobs:
           chmod +x ./gradlew
           ./gradlew bootJar
 
-      - name: Execute Gradle build
-        run: |
-          chmod +x ./gradlew
-          ./gradlew bootJar
-
       - name: Copy Jar file
-        run: mv build/libs/http-echo-0.0.1-SNAPSHOT-plain.jar app.jar
+        run: mv build/libs/http-echo-0.0.1-SNAPSHOT.jar app.jar
 
       - uses: actions/upload-artifact@master
         with:
