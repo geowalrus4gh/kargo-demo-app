@@ -26,9 +26,5 @@ public class EchoController {
 	public String many() {
 		return "Am a many";
 	}
-	@GetMapping("/manyAnotherAnother")
-	public String manyAnotherAnother() {
-		return "Am a many";
-	}
 
 }
