@@ -21,4 +21,10 @@ public class EchoController {
 	public String test() {
 		return "Am a test";
 	}
+
+	@GetMapping("/many")
+	public String many() {
+		return "Am a many";
+	}
+
 }
