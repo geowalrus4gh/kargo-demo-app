@@ -1,8 +1,10 @@
 name: Docker CI with Gradle for Kargo
 
 on:
+  workflow_dispatch: 
   push:
     branches: [ "main" ]
+  
 
 permissions:
   contents: read
